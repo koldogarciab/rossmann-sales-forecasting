@@ -1,0 +1,21 @@
+area,check,passed,observed_value
+Files,train: non-empty dataset,True,"1,017,209 rows x 9 columns"
+Duplicates,train: no exact duplicate rows,True,0
+Files,store: non-empty dataset,True,"1,115 rows x 10 columns"
+Duplicates,store: no exact duplicate rows,True,0
+Files,test: non-empty dataset,True,"41,088 rows x 8 columns"
+Duplicates,test: no exact duplicate rows,True,0
+Files,sample_submission: non-empty dataset,True,"41,088 rows x 2 columns"
+Duplicates,sample_submission: no exact duplicate rows,True,0
+Granularity,train: unique key Store + Date,True,0
+Granularity,test: unique key Store + Date,True,0
+Granularity,store: unique key Store,True,0
+Granularity,test: unique key Id,True,0
+Granularity,sample_submission: unique key Id,True,0
+Dates,train: no invalid Date values,True,0
+Dates,train: DayOfWeek matches Date,True,0
+Dates,test: no invalid Date values,True,0
+Dates,test: DayOfWeek matches Date,True,0
+Referential integrity,train: every Store exists in store master,True,0
+Referential integrity,test: every Store exists in store master,True,0
+Submission,test and sample_submission contain the same Id values,True,"test=41,088; submission=41,088"
