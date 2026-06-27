@@ -1,0 +1,35 @@
+feature,feature_type,dtype,description
+DayOfWeek,numeric,int64,Deterministic calendar or store-level feature available at forecast time.
+Promo,numeric,int64,Standard promotion known for the forecast date.
+SchoolHoliday,numeric,int64,School-holiday indicator known for the forecast date.
+Year,numeric,int16,Deterministic calendar or store-level feature available at forecast time.
+Quarter,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+Month,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+Day,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+ISOWeek,numeric,int16,Deterministic calendar or store-level feature available at forecast time.
+IsWeekend,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+IsMonthStart,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+IsMonthEnd,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+DaysSince2013Start,numeric,int16,Deterministic calendar or store-level feature available at forecast time.
+MonthSin,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+MonthCos,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+DayOfWeekSin,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+DayOfWeekCos,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+ISOWeekSin,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+ISOWeekCos,numeric,float64,Deterministic calendar or store-level feature available at forecast time.
+CompetitionDistanceImputed,numeric,float64,Nearest-competitor distance with median imputation.
+LogCompetitionDistance,numeric,float64,Log transformation of competitor distance.
+CompetitionDistanceMissing,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+CompetitionActive,numeric,int8,Whether the competitor had opened by the observation date.
+CompetitionStartMissing,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+CompetitionMonthsOpen,numeric,int16,"Months since competitor opening, zero when inactive or unknown."
+Promo2,numeric,int64,Deterministic calendar or store-level feature available at forecast time.
+Promo2ScheduledMonth,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+Promo2Active,numeric,int8,Whether Promo2 is active in the store's scheduled month.
+Promo2StartMissing,numeric,int8,Deterministic calendar or store-level feature available at forecast time.
+Promo2MonthsSinceStart,numeric,int16,"Months since Promo2 started, zero before activation."
+Store,categorical,int64,Store identifier; captures structural differences between stores.
+StateHoliday,categorical,object,State-holiday category.
+StoreType,categorical,object,Coded Rossmann store format.
+Assortment,categorical,object,Coded assortment type.
+PromoInterval,categorical,object,Recurring Promo2 month schedule.

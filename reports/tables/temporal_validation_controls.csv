@@ -1,0 +1,7 @@
+control,passed,observed_value
+Training ends before validation starts,True,2015-06-13 < 2015-06-14
+Validation contains 48 unique dates,True,48
+All validation stores have training history,True,0
+No model-feature missing values in training open rows,True,0
+No model-feature missing values in validation metric rows,True,0
+No model-feature missing values in test,True,0

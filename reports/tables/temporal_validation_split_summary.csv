@@ -1,0 +1,5 @@
+split,minimum_date,maximum_date,rows,unique_dates,stores
+training,2013-01-01,2015-06-13,963689,894,1115
+validation_all_stores,2015-06-14,2015-07-31,53520,48,1115
+validation_test_stores,2015-06-14,2015-07-31,41088,48,856
+kaggle_test,2015-08-01,2015-09-17,41088,48,856

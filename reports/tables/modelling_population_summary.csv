@@ -1,0 +1,7 @@
+population,rows
+training_open_rows,798508
+validation_test_store_rows,41088
+validation_open_rows,35262
+validation_metric_rows,35262
+validation_closed_rows,5826
+validation_open_zero_sales_rows,0
