@@ -1,0 +1,5 @@
+metric,value
+Stores in train,1115
+Stores in test,856
+Train stores absent from test,259
+Test stores absent from train,0

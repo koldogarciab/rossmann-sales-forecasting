@@ -53,3 +53,6 @@ models/*.onnx
 *.tmp
 *.temp
 ~$*
+
+# Large reproducible EDA row-level output
+reports/tables/eda_extreme_sales_diagnostic.csv

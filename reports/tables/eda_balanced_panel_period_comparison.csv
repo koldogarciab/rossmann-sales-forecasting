@@ -1,0 +1,4 @@
+Period,days,full_mean_sales,balanced_mean_sales,mean_difference_pct,minimum_reporting_stores,maximum_reporting_stores
+Before missing-data block,546,7086.045987982443,7153.757669832176,0.8198096258674648,1114,1115
+Missing-data block,184,7519.65536010329,7521.869740143629,0.029906135639281708,935,935
+After missing-data block,212,7455.629883906943,7508.171570570548,0.5501848620663947,1115,1115
