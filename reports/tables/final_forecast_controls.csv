@@ -1,0 +1,11 @@
+area,control,passed,observed_value
+Submission,Same number of rows as sample submission,True,41088
+Submission,Same Id set as sample submission,True,41088
+Submission,Same Id order as sample submission,True,Compared row by row
+Submission,No missing Sales predictions,True,0
+Submission,No negative Sales predictions,True,0
+Forecast,Closed stores receive zero,True,0
+Forecast,All test stores exist in historical data,True,0
+Forecast,Test horizon contains 48 unique dates,True,48
+Forecast,11 missing Open values were filled,True,11
+Forecast,No missing final predictions,True,0
