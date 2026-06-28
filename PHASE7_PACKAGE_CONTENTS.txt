@@ -1,0 +1,22 @@
+Rossmann Sales Forecasting — Phase 7 package
+
+Copy the contents of this package into the root of the existing repository.
+The folder structure is already prepared.
+
+New files:
+- notebooks/07_sql_data_model.ipynb
+- src/build_sql_model.py
+- sql/01_create_tables.sql
+- sql/02_create_views.sql
+- sql/03_analysis_queries.sql
+- sql/04_data_quality_checks.sql
+- docs/phase_7_start_guide_ES.md
+- docs/phase_7_data_dictionary_ES.md
+- powerbi/README.md
+- powerbi/data/.gitkeep
+
+Modified file:
+- .gitignore
+
+Generated outputs are deliberately excluded. They are created by:
+    python -m src.build_sql_model

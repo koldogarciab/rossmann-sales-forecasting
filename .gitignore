@@ -56,3 +56,7 @@ models/*.onnx
 
 # Large reproducible EDA row-level output
 reports/tables/eda_extreme_sales_diagnostic.csv
+
+# Generated Power BI data exports
+powerbi/data/*
+!powerbi/data/.gitkeep
