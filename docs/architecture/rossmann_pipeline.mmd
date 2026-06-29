@@ -1,0 +1,10 @@
+flowchart LR
+    A[Source data<br/>train.csv, store.csv, test.csv] --> B[Data audit and quality controls]
+    B --> C[Feature engineering<br/>calendar, store, promo, competition]
+    C --> D[Temporal validation<br/>3 consecutive 48-day folds]
+    D --> E[Selected model<br/>Recent 365-day Store + weekday + Promo]
+    E --> F[Batch scoring<br/>41,088 predictions]
+    F --> G[24 quality controls<br/>and model metadata]
+    G --> H[SQLite star schema<br/>and Power BI exports]
+    H --> I[Power BI dashboard<br/>and FP&A analysis]
+    I -. actual sales and monitoring .-> D

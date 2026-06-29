@@ -1,0 +1,15 @@
+metric,value
+Forecast sales,247034117.41815722
+Forecast rows,41088.0
+Forecast stores,856.0
+Forecast dates,48.0
+Open store days,35104.0
+Closed store days,5984.0
+Promo open store days,16252.0
+Mean sales per open store day,7037.207082331279
+Promo average sales,8174.55554164064
+Non-promo average sales,6056.717629716397
+Promo uplift,0.34966759908591105
+Promo share of forecast sales,0.5377916137707499
+Top 10 stores share of forecast sales,0.03159315648996178
+Top 50 stores share of forecast sales,0.11150719537561855
