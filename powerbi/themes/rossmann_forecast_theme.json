@@ -1,0 +1,22 @@
+{
+  "name": "Rossmann Forecast Portfolio",
+  "dataColors": [
+    "#D71920",
+    "#1F4E79",
+    "#5B9BD5",
+    "#70AD47",
+    "#ED7D31",
+    "#8064A2",
+    "#A5A5A5",
+    "#2F75B5"
+  ],
+  "background": "#F6F7F9",
+  "foreground": "#1F2937",
+  "tableAccent": "#D71920",
+  "good": "#2E7D32",
+  "neutral": "#F9A825",
+  "bad": "#C62828",
+  "maximum": "#17324D",
+  "center": "#5B9BD5",
+  "minimum": "#DDE8F3"
+}

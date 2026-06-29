@@ -1,0 +1,185 @@
+// ============================================================
+// Rossmann Sales Forecasting - Phase 8 Power BI measures
+// Dashboard labels are in English for the Australian portfolio.
+// Create the measures in the _Measures table in this order.
+// ============================================================
+
+// ---------- Historical performance ----------
+Actual Sales =
+SUM(fact_sales_history[Sales])
+
+Historical Customers =
+SUM(fact_sales_history[Customers])
+
+Historical Open Store Days =
+SUM(fact_sales_history[Open])
+
+Historical Promo Store Days =
+SUM(fact_sales_history[OpenPromoFlag])
+
+Actual Sales per Open Store Day =
+DIVIDE([Actual Sales], [Historical Open Store Days])
+
+Actual Sales per Customer =
+DIVIDE([Actual Sales], [Historical Customers])
+
+Historical Promo Sales =
+CALCULATE(
+    [Actual Sales],
+    fact_sales_history[OpenPromoFlag] = 1
+)
+
+Historical Non-Promo Sales =
+CALCULATE(
+    [Actual Sales],
+    fact_sales_history[Open] = 1,
+    fact_sales_history[Promo] = 0
+)
+
+Historical Promo Average =
+DIVIDE([Historical Promo Sales], [Historical Promo Store Days])
+
+Historical Non-Promo Open Store Days =
+CALCULATE(
+    [Historical Open Store Days],
+    fact_sales_history[Open] = 1,
+    fact_sales_history[Promo] = 0
+)
+
+Historical Non-Promo Average =
+DIVIDE(
+    [Historical Non-Promo Sales],
+    [Historical Non-Promo Open Store Days]
+)
+
+Historical Promo Uplift % =
+DIVIDE(
+    [Historical Promo Average],
+    [Historical Non-Promo Average]
+) - 1
+
+// ---------- Forecast performance ----------
+Forecast Sales =
+SUM(fact_sales_forecast[ForecastSales])
+
+Forecast Rows =
+COUNTROWS(fact_sales_forecast)
+
+Forecast Stores =
+DISTINCTCOUNT(fact_sales_forecast[Store])
+
+Forecast Dates =
+DISTINCTCOUNT(fact_sales_forecast[DateKey])
+
+Forecast Open Store Days =
+SUM(fact_sales_forecast[OpenFilled])
+
+Forecast Closed Store Days =
+[Forecast Rows] - [Forecast Open Store Days]
+
+Forecast Promo Store Days =
+SUM(fact_sales_forecast[OpenPromoFlag])
+
+Forecast Non-Promo Open Store Days =
+CALCULATE(
+    [Forecast Open Store Days],
+    fact_sales_forecast[OpenFilled] = 1,
+    fact_sales_forecast[Promo] = 0
+)
+
+Forecast Sales per Open Store Day =
+DIVIDE([Forecast Sales], [Forecast Open Store Days])
+
+Forecast Sales per Calendar Day =
+DIVIDE([Forecast Sales], [Forecast Dates])
+
+Forecast Promo Sales =
+CALCULATE(
+    [Forecast Sales],
+    fact_sales_forecast[OpenPromoFlag] = 1
+)
+
+Forecast Non-Promo Sales =
+CALCULATE(
+    [Forecast Sales],
+    fact_sales_forecast[OpenFilled] = 1,
+    fact_sales_forecast[Promo] = 0
+)
+
+Forecast Promo Average =
+DIVIDE([Forecast Promo Sales], [Forecast Promo Store Days])
+
+Forecast Non-Promo Average =
+DIVIDE(
+    [Forecast Non-Promo Sales],
+    [Forecast Non-Promo Open Store Days]
+)
+
+Forecast Promo Uplift % =
+DIVIDE(
+    [Forecast Promo Average],
+    [Forecast Non-Promo Average]
+) - 1
+
+Forecast Sales Share % =
+DIVIDE(
+    [Forecast Sales],
+    CALCULATE([Forecast Sales], ALL(dim_store))
+)
+
+Store Forecast Rank =
+RANKX(
+    ALLSELECTED(dim_store[Store]),
+    [Forecast Sales],
+    ,
+    DESC,
+    DENSE
+)
+
+Top Store Forecast Sales =
+MAXX(
+    ALLSELECTED(dim_store[Store]),
+    [Forecast Sales]
+)
+
+// ---------- Combined timeline ----------
+Sales Timeline =
+[Actual Sales] + [Forecast Sales]
+
+// ---------- Model metrics ----------
+Mean RMSPE =
+MAX(model_metrics[MeanRMSPE])
+
+RMSPE Standard Deviation =
+MAX(model_metrics[RMSPEStandardDeviation])
+
+Final Fold RMSPE =
+MAX(model_metrics[FinalFoldRMSPE])
+
+Kaggle Public RMSPE =
+MAX(model_metrics[KagglePublicRMSPE])
+
+Kaggle Private RMSPE =
+MAX(model_metrics[KagglePrivateRMSPE])
+
+Model History Window Days =
+MAX(model_metrics[HistoryWindowDays])
+
+Missing Open Values =
+MAX(model_metrics[MissingOpenValues])
+
+// ---------- Data quality ----------
+Controls Passed =
+SUM(data_quality_results[Passed])
+
+Controls Total =
+COUNTROWS(data_quality_results)
+
+Controls Failed =
+[Controls Total] - [Controls Passed]
+
+Controls Status =
+FORMAT([Controls Passed], "0") & "/" & FORMAT([Controls Total], "0")
+
+Quality Pass Rate % =
+DIVIDE([Controls Passed], [Controls Total])
