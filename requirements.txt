@@ -1,5 +1,5 @@
-# Initial environment for Phases 0-2.
-# Exact versions will be frozen after the workflow is stable.
+# Final Python dependencies for the reproducible project environment.
+# environment.yml is the recommended installation method.
 numpy>=1.26,<3.0
 pandas>=2.2,<3.0
 matplotlib>=3.8,<4.0
